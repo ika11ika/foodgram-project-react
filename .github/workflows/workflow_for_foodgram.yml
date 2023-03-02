@@ -50,8 +50,7 @@ jobs:
         key: ${{ secrets.SSH_KEY }}
         passphrase: ${{ secrets.PASSPHRASE }}
         script: |
-          ls -a
-          cd foodgram/infra/
+          cd foodgram-project-react/infra/
           sudo docker pull ika11ika/api_yamdb
           sudo docker-compose stop
           sudo docker-compose rm web
