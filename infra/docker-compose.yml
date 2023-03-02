@@ -19,6 +19,8 @@ services:
   web:
     image: ika11ika/foodgram_web:latest
     restart: always
+    ports:
+      - "8000:80"
     volumes:
       - static_value:/app/static/
       - media_value:/app/media/
