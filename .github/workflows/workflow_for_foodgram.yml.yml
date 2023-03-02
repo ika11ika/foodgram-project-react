@@ -37,4 +37,4 @@ jobs:
         with:
           context: backend/foodgram/
           push: true
-          tags: dranbald/foodgram_web:latest
+          tags: ika11ika/foodgram_web:latest
