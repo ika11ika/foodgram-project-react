@@ -5,6 +5,7 @@ services:
     build:
       context: ../frontend
       dockerfile: Dockerfile
+    restart: always
     volumes:
       - ../frontend/:/app/result_build/
 
@@ -16,9 +17,7 @@ services:
       - ./.env
 
   web:
-    build:
-      context: ../backend/foodgram
-      dockerfile: Dockerfile
+    image: ika11ika/foodgram_web:latest
     restart: always
     volumes:
       - static_value:/app/static/
@@ -30,6 +29,7 @@ services:
 
   nginx:
     image: nginx:1.19.3
+    restart: always
     ports:
       - "80:80"
     volumes:
