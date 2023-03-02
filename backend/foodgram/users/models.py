@@ -1,5 +1,5 @@
-from django.db import models
 from django.contrib.auth.models import AbstractUser
+from django.db import models
 
 USER = 'user'
 ADMIN = 'admin'
@@ -48,7 +48,7 @@ class User(AbstractUser):
     @property
     def is_admin(self):
         return self.role == ADMIN
-    
+
     def __str__(self):
         return f'{self.first_name} {self.last_name}'
 

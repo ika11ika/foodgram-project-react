@@ -15,7 +15,7 @@ class Ingredient(models.Model):
 
     def __str__(self):
         return f'{self.name} - {self.measurement}'
-    
+
     class Meta:
         ordering = ['name']
 
