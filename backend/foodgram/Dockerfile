@@ -1,10 +1,10 @@
 FROM python:3.7-slim
 
-WORKDIR ../../data
+RUN mkdir /data
 
-RUN ["mkdir", "../backend/foodgram/data"] 
+WORKDIR ../../data/
 
-COPY ./ ../backend/foodgram/data/
+COPY . ../backend/foodgram/data/
 
 WORKDIR ../backend/foodgram/
 
