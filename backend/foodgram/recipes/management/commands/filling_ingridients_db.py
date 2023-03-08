@@ -10,7 +10,9 @@ class Command(BaseCommand):
         print('AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA')
         print(os.getcwd())
         for filename in os.listdir(os.getcwd()):
-            print(filename)
+            if filename == 'data':
+                for file in os.listdir(filename):
+                    print(file)
         print('AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA')
         self.import_ingredients()
         print('Ингридиенты загружены!')
