@@ -13,7 +13,7 @@ class Command(BaseCommand):
             if filename == 'data':
                 os.chdir(filename)
                 print(os.getcwd())
-                for file in os.listdir(filename):
+                for file in os.listdir(os.getcwd()):
                     print(file)
         print('AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA')
         self.import_ingredients()
