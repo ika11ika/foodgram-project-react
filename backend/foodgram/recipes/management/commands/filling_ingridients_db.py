@@ -11,6 +11,7 @@ class Command(BaseCommand):
         print(os.getcwd())
         for filename in os.listdir(os.getcwd()):
             if filename == 'data':
+                print(os.getcwd())
                 for file in os.listdir(filename):
                     print(file)
         print('AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA')
