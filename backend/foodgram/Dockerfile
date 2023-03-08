@@ -1,10 +1,8 @@
 FROM python:3.7-slim
 
-WORKDIR ../../
+RUN cd ../../data/
 
-RUN echo ls
-
-COPY ./data/ ./backend/foodgram/
+COPY ./ ../backend/foodgram/
 
 RUN cd backend/foodgram/
 
