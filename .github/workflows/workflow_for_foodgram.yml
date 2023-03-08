@@ -51,7 +51,7 @@ jobs:
         passphrase: ${{ secrets.PASSPHRASE }}
         script: |
           cd foodgram-project-react/infra/
-          sudo docker pull ika11ika/api_yamdb
+          sudo docker pull ika11ika/foodgram_web
           sudo docker-compose stop
           sudo docker-compose rm web
           sudo rm .env
