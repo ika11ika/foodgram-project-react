@@ -1,8 +1,10 @@
 FROM python:3.7-slim
 
-WORKDIR ../../data/
+WORKDIR ../../data
 
-COPY ./ ../backend/foodgram/
+RUN mkdir ../backend/foodgram/data
+
+COPY ./ ../backend/foodgram/data/
 
 WORKDIR ../backend/foodgram/
 
