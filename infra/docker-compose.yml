@@ -24,7 +24,7 @@ services:
     volumes:
       - static_value:/app/static/
       - media_value:/app/media/
-      - ../data/:/app/data/
+      - data:/home/ika11ika/foodgram-project-react/data/
     depends_on:
       - db
     env_file:
@@ -47,4 +47,5 @@ services:
 volumes:
   static_value:
   media_value:
-
+  data:
+    external: true
