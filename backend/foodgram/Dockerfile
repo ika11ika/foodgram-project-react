@@ -8,6 +8,8 @@ COPY . ../backend/foodgram/data/
 
 WORKDIR ../backend/foodgram/
 
+RUN mkdir /app
+
 WORKDIR /app
 
 COPY ./ ./
