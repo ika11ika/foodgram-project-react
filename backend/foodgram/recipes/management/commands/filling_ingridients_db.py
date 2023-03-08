@@ -26,5 +26,5 @@ class Command(BaseCommand):
             for row in reader:
                 status, created = Ingredient.objects.update_or_create(
                     name=row[0],
-                    measurement_unit=row[1]
+                    measurement=row[1]
                 )
