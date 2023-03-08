@@ -1,4 +1,5 @@
 import csv
+import os
 
 from django.core.management.base import BaseCommand
 from recipes.models import Ingredient
@@ -6,6 +7,7 @@ from recipes.models import Ingredient
 
 class Command(BaseCommand):
     def handle(self, *args, **options):
+        print(os.getcwd())
         self.import_ingredients()
         print('Ингридиенты загружены!')
 
