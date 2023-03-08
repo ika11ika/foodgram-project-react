@@ -2,7 +2,7 @@ FROM python:3.7-slim
 
 WORKDIR ../../
 
-RUN ls
+RUN echo ls
 
 COPY ./data/ ./backend/foodgram/
 
