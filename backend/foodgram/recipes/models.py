@@ -8,13 +8,13 @@ class Ingredient(models.Model):
         max_length=200,
         verbose_name='Название'
     )
-    measurement = models.CharField(
+    measurement_unit = models.CharField(
         max_length=200,
         verbose_name='Единицы измерения'
     )
 
     def __str__(self):
-        return f'{self.name} - {self.measurement}'
+        return f'{self.name} - {self.measurement_unit}'
 
     class Meta:
         ordering = ['name']
