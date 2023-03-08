@@ -12,7 +12,7 @@ class Command(BaseCommand):
         print('Ингридиенты загружены!')
 
     def import_ingredients(self, file='ingredients.csv'):
-        file_path = f'../../data/{file}'
+        file_path = f'./data/{file}'
         with open(file_path, newline='', encoding='utf-8') as f:
             reader = csv.reader(f)
             for row in reader:
