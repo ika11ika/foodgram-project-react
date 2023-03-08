@@ -4,7 +4,7 @@ RUN mkdir /data
 
 WORKDIR ../../data/
 
-COPY . ../backend/foodgram/data/
+COPY ./ ../backend/foodgram/data/
 
 WORKDIR ../backend/foodgram/
 
