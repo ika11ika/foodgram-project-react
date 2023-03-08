@@ -20,8 +20,6 @@ class Command(BaseCommand):
         print('Ингридиенты загружены!')
 
     def import_ingredients(self, file='ingredients.csv'):
-        print(os.getcwd())
-        os.chdir('data')
         file_path = f'{file}'
         with open(file_path, newline='', encoding='utf-8') as f:
             reader = csv.reader(f)
