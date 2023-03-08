@@ -2,6 +2,8 @@ FROM python:3.7-slim
 
 WORKDIR ../../
 
+RUN ls
+
 COPY ./data/ ./backend/foodgram/
 
 RUN cd backend/foodgram/
