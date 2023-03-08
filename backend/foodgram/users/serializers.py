@@ -12,7 +12,7 @@ class UserSerializer(serializers.ModelSerializer):
         fields = (
             'id',
             'email',
-            'login',
+            'username',
             'first_name',
             'last_name',
             'password'
@@ -35,7 +35,7 @@ class AuthorSerializer(UserSerializer):
         fields = (
             'id',
             'email',
-            'login',
+            'username',
             'first_name',
             'last_name',
             'password',
@@ -57,7 +57,7 @@ class AuthorSerializer(UserSerializer):
 class FollowSerializer(serializers.ModelSerializer):
     email = serializers.ReadOnlyField(source='following.id')
     id = serializers.ReadOnlyField(source='following.id')
-    login = serializers.ReadOnlyField(source='following.login')
+    username = serializers.ReadOnlyField(source='following.username')
     first_name = serializers.ReadOnlyField(source='following.first_name')
     last_name = serializers.ReadOnlyField(source='following.last_name')
     is_subscribed = serializers.SerializerMethodField()
