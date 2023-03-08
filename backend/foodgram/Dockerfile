@@ -1,10 +1,10 @@
 FROM python:3.7-slim
 
-RUN cd ../../data/
+WORKDIR ../../data/
 
 COPY ./ ../backend/foodgram/
 
-RUN cd backend/foodgram/
+WORKDIR ../backend/foodgram/
 
 WORKDIR /app
 
