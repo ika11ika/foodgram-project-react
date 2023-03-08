@@ -1,11 +1,5 @@
 FROM python:3.7-slim
 
-RUN mkdir app
-
-RUN mkdir app/data
-
-COPY ../../data/ ./app/data/
-
 WORKDIR /app
 
 COPY ./ ./
