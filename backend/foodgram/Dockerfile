@@ -10,9 +10,7 @@ WORKDIR ../backend/foodgram/
 
 RUN mkdir /app
 
-WORKDIR /app
-
-COPY ./ ./
+COPY . /app
 
 RUN pip3 install -r requirements.txt --no-cache-dir
 
