@@ -7,15 +7,7 @@ from recipes.models import Ingredient
 
 class Command(BaseCommand):
     def handle(self, *args, **options):
-        print('AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA')
-        print(os.getcwd())
-        for filename in os.listdir(os.getcwd()):
-            if filename == 'data':
-                os.chdir(filename)
-                print(os.getcwd())
-                for file in os.listdir(os.getcwd()):
-                    print(file)
-        print('AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA')
+        os.chdir('data')
         self.import_ingredients()
         print('Ингридиенты загружены!')
 
