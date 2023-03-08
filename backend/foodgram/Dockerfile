@@ -1,15 +1,5 @@
 FROM python:3.7-slim
 
-RUN mkdir /data
-
-WORKDIR ../../data/
-
-COPY ./ ../backend/foodgram/data/
-
-WORKDIR ../backend/foodgram/
-
-RUN mkdir /app
-
 WORKDIR /app
 
 COPY ./ ./
