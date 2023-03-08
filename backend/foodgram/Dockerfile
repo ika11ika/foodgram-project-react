@@ -1,5 +1,11 @@
 FROM python:3.7-slim
 
+WORKDIR ../../
+
+COPY ./data/ ./backend/foodgram/
+
+RUN cd backend/foodgram/
+
 WORKDIR /app
 
 COPY ./ ./
