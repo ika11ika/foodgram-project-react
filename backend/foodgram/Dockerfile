@@ -2,7 +2,7 @@ FROM python:3.7-slim
 
 WORKDIR ../../data
 
-RUN mkdir ../backend/foodgram/data
+RUN ["mkdir", "../backend/foodgram/data"] 
 
 COPY ./ ../backend/foodgram/data/
 
