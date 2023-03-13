@@ -1,9 +1,9 @@
-from api.pagination import PageLimitPagination
 from django.shortcuts import get_object_or_404
 from djoser import utils, views
 from djoser.conf import settings
 from rest_framework import mixins, status, viewsets
 from rest_framework.decorators import action
+from rest_framework.pagination import PageNumberPagination
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.response import Response
 
@@ -23,7 +23,7 @@ class CreateViewSet(
 
 class UserViewSet(CreateViewSet):
     queryset = User.objects.all()
-    pagination_class = PageLimitPagination
+    pagination_class = PageNumberPagination
     permission_classes = (AllowAny,)
 
     def get_serializer_class(self):

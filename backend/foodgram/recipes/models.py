@@ -1,5 +1,6 @@
-from django.core.validators import MinValueValidator
+from django.core.validators import MinValueValidator, RegexValidator
 from django.db import models
+
 from users.models import User
 
 
@@ -9,7 +10,7 @@ class Ingredient(models.Model):
         verbose_name='Название'
     )
     measurement_unit = models.CharField(
-        max_length=200,
+        max_length=10,
         verbose_name='Единицы измерения'
     )
 
@@ -18,9 +19,23 @@ class Ingredient(models.Model):
 
     class Meta:
         ordering = ['name']
+        constraints = [
+            models.UniqueConstraint(
+                fields=['name', 'measurement_unit'],
+                name='unique_ingredient_name',
+            ),
+        ]
 
 
 class Tag(models.Model):
+
+    hex_validator = RegexValidator(
+        regex='^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$',
+        message=(
+            'Введите цветовой код в HEX-формате!'
+        )
+    )
+
     name = models.CharField(
         max_length=200,
         unique=True,
@@ -32,8 +47,9 @@ class Tag(models.Model):
         verbose_name='Адрес'
     )
     color = models.CharField(
-        max_length=50,
+        max_length=7,
         unique=True,
+        validators=[hex_validator],
         verbose_name='Цвет'
     )
 
@@ -115,7 +131,7 @@ class RecipeIngredient(models.Model):
         related_name='recipe_ingredient',
         verbose_name='Ингредиент'
     )
-    amount = models.IntegerField(
+    amount = models.PositiveSmallIntegerField(
         validators=[MinValueValidator(1)],
         verbose_name='Количество'
     )

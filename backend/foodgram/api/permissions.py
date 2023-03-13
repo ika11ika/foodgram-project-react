@@ -13,5 +13,4 @@ class IsAuthenticatedAuthorOrReadOnly(permissions.BasePermission):
         return (
             request.method in permissions.SAFE_METHODS
             or obj.author == request.user
-            and request.user.is_authenticated
         )
